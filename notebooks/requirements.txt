@@ -1,0 +1,9 @@
+torch>=2.1
+torchvision>=0.16
+timm>=1.0.0          # provides DINOv3 checkpoints (vit_*_dinov3.*)
+numpy
+pandas
+pillow
+pyyaml
+matplotlib
+pydicom               # only required for the prostate MRI (DICOM) dataset

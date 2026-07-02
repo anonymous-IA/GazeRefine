@@ -1,0 +1,27 @@
+# GazeRefine config — NCI-ISBI Prostate MRI segmentation
+# These are the exact hyperparameters used to obtain the 75.44% Dice
+# reported in Table 1 of the paper.
+
+dataset: prostate_mri
+root: /path/to/Pros_MRI            # expects <root>/images (.dcm), <root>/masks (.png)
+fixation_csv: /path/to/nci-isbi_fixation.csv
+
+dino_name: vit_large_patch16_dinov3.lvd1689m
+extract_mode: last                 # "last" | "all"
+
+sigma: 1.5                         # gaze Gaussian spread, in patch units
+contrast_method: difference        # "difference" | "softmax" | "original"
+temperature: 0.05                  # only used by contrast_method=softmax
+max_iters: 1                       # T, recurrent refinement iterations
+gaze_anchor_weight: 0.8            # lambda, anchoring strength (trust gaze more — low-contrast MRI)
+
+knn_refine: true
+knn_k: 3
+knn_temp: 0.1
+
+threshold: 0.5                     # binarization threshold
+
+batch_size: 4
+num_workers: 4
+save_num: 10
+pred_dir: ./predictions/prostate_mri

@@ -1,0 +1,7 @@
+torch>=2.1
+torchvision>=0.16
+timm>=1.0.0
+numpy
+pandas
+pillow
+gradio>=4.0
