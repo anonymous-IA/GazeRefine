@@ -70,14 +70,14 @@ GazeRefine produces more complete object delineation while remaining fully
 training-free and operating directly on frozen DINOv3 features.
 
 ---  
-<p align="center">
+<div align="center">
   
 | Method | Supervision | Kvasir-SEG Dice (%) ↑ | NCI-ISBI Dice (%) ↑ |
 |---|---|:---:|:---:|
 | **GazeRefine** | **Zero-Shot + Gaze** | **89.49 ± 0.12** | 76.53 ± 0.17 |
 
 
-</p>
+</div>
 These results demonstrate that expert gaze can provide a powerful test-time supervisory signal for segmentation without requiring any annotated masks or parameter updates.
 
 ---
